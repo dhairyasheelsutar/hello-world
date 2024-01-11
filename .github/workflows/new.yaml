@@ -24,4 +24,4 @@ jobs:
             echo $file is changed
             files+=($file)
           done
-          echo $files
+          echo $files[@]
