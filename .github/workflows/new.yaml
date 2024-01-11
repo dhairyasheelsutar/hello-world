@@ -22,6 +22,8 @@ jobs:
           files=()
           for file in "${{ steps.changed-files.outputs.all_changed_files }}"; do
             echo $file is changed
-            files+=($file)
+            files+=("$file")
           done
+
+          echo "Priting array of changed files"
           echo $files[@]
