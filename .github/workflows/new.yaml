@@ -1,0 +1,13 @@
+name: Job Deployment
+
+on:
+  push:
+    branches: [ prod ]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: |
+          echo "Hello World"
