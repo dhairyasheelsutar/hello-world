@@ -18,9 +18,9 @@ jobs:
           files: ecs/**
         
       - name: List all changed files
-        env:
-          files: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          for file in "$files[@]"; do
-            echo "$file was changed"
+          files=()
+          for file in "${{ steps.changed-files.outputs.all_changed_files }}"; do
+            files+=($file)
           done
+          echo $files
