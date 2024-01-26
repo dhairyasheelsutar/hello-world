@@ -1,8 +1,8 @@
 name: Job Deployment
 
 on:
-  push:
-    branches: [ prod ]
+  workflow_dispatch:
+    
 
 jobs:
   CI:
@@ -11,19 +11,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v40
-        with:
-          files: ecs/**
+      # - name: Get changed files
+      #   id: changed-files
+      #   uses: tj-actions/changed-files@v40
+      #   with:
+      #     files: ecs/**
         
-      - name: List all changed files
-        run: |
-          files=()
-          for file in "${{ steps.changed-files.outputs.all_changed_files }}"; do
-            echo $file is changed
-            files+=("$file")
-          done
+      # - name: List all changed files
+      #   run: |
+      #     files=()
+      #     for file in "${{ steps.changed-files.outputs.all_changed_files }}"; do
+      #       echo $file is changed
+      #       files+=("$file")
+      #     done
 
-          echo "Priting array of changed files"
-          echo $files[@]
+      #     echo "Priting array of changed files"
+      #     echo $files[@]

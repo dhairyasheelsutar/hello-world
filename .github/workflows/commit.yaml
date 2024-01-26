@@ -1,0 +1,18 @@
+name: Test Commit
+
+on:
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  id-token: "write"
+  contents: "read"
+
+jobs:
+  job-one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wagoid/commitlint-github-action@v4
+        with:
+          firstParent: true
