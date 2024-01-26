@@ -1,3 +1,4 @@
 name: example1
 memory: 2.5G
 cpu: 1
+test: 12
